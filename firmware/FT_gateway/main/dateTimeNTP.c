@@ -102,7 +102,10 @@ char* dateTimeNTP_getData(void)
 void dateTimeNTP_setup(void)
 {
 	// Set the wifi connected event callback function
-	wifiApp_setCallback(dateTimeNTP_wifiApp_connectedEvents);
+	wifiApp_setCallbacks(
+        NULL,
+        dateTimeNTP_wifiApp_connectedEvents
+    );
 }
 
 static void dateTimeNTP_wifiApp_connectedEvents(void)

@@ -14,6 +14,7 @@
 #include "httpServer.h"
 #include "otaUpdate.h"
 #include "esp_timer.h"
+#include "hal_system.h"
 
 static const char TAG[] = "ota_update";
 

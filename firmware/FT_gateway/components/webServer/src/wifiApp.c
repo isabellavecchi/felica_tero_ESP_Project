@@ -37,6 +37,7 @@
 
 // Personal libraries
 #include "wifiApp.h"
+#include "projectConfig.h"
 #include "tasks_common.h"
 #include "hal_memory.h"
 #include "hal_system.h"
@@ -203,16 +204,16 @@ static void wifiApp_setup(void)
 	wifiApp_defaultWifi_init();
 
 	// If it already has SSID and passwd of network configured, it doesn't need AP.
-	if (ESP_OK == wifiApp_loadCredentials())
-	{
-		wifi_mode = WIFI_MODE_STA;
-	}
-	else
-	{
-		wifi_mode = WIFI_MODE_APSTA;
-	}
+	// if (ESP_OK == wifiApp_loadCredentials())
+	// {
+	// 	wifi_mode = WIFI_MODE_STA;
+	// }
+	// else
+	// {
+	// 	wifi_mode = WIFI_MODE_APSTA;
+	// }
 
-	wifiApp_configMode(wifi_mode);
+	wifiApp_configMode(WIFI_MODE_APSTA);
 }
 
 // Sets the callbacks functions

@@ -16,6 +16,15 @@
 #define TRUE    1
 #define FALSE   0
 
+#define BOARD_ESP32C6
+// #define BOARD_ESP32S3
+
+#if defined BOARD_ESP32C6
+    #define CREATE_TASK xTaskCreate
+#elif defined BOARD_ESP32S3
+    #define CREATE_TASK xTaskCreateStaticPinnedToCore
+#endif
+
 // RGB LED GPIOs
 #define RGB_LED_RED_GPIO	12
 #define RGB_LED_GREEN_GPIO	13
